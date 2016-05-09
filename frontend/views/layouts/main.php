@@ -70,20 +70,15 @@ ThemeAsset::register($this);
         <div class="row">
             <div class="col-md-3">
                 <div class="hidden-xs">
-                    <?php
-                    if ($this->beginCache('main-menu', ['duration' => 3600])) {
-                        echo Navigation::widget([
-                            'encodeLabels' => false,
-                            'items' => Menu::getMenuItems('main-menu'),
-                            'options' => [
-                                ['class' => 'nav nav-pills nav-stacked'],
-                                ['class' => 'nav nav-second-level'],
-                                ['class' => 'nav nav-third-level']
-                            ],
-                        ]);
-
-                        $this->endCache();
-                    }
+                    <?= Navigation::widget([
+                        'encodeLabels' => false,
+                        'items'        => Menu::getMenuItems('main-menu'),
+                        'options'      => [
+                            ['class' => 'nav nav-pills nav-stacked'],
+                            ['class' => 'nav nav-second-level'],
+                            ['class' => 'nav nav-third-level']
+                        ],
+                    ]);
                     ?>
                 </div>
             </div>
